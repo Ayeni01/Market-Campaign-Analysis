@@ -26,30 +26,66 @@ The analysis was conducted as the final project of a 60-day, 6-project data anal
 | DAX        | Custom metrics in Power BI                      |
 | GitHub     | Documentation and version control               |
 
+
 ---
 
 ## 📊 Dataset Overview
 
-The dataset includes the following columns:
+The dataset includes campaign-level records with the following attributes:
 
-| Column Name         | Description                                |
-|---------------------|--------------------------------------------|
-| Campaign ID         | Unique campaign identifier                 |
-| Company             | Organization running the campaign          |
-| Campaign Type       | Type (Email, Influencer, Display, etc.)    |
-| Target Audience     | Audience being targeted                    |
-| Duration (days)     | Number of days campaign ran                |
-| Channel Used        | Channel for campaign delivery              |
-| Conversion Rate     | % of users converted after seeing the ad   |
-| Acquisition Cost    | Cost to acquire each customer              |
-| ROI                 | Return on investment                       |
-| Date                | Campaign start date                        |
-| Clicks              | Total clicks received                      |
-| Impressions         | Number of times the ad was displayed       |
-| Engagement Score    | User interaction score                     |
-| Customer Segment    | Group classification of users              |
+| Column              | Description                                  |
+|---------------------|----------------------------------------------|
+| Campaign ID         | Unique identifier for each campaign          |
+| Company             | Campaign-owning company                      |
+| Campaign Type       | Type of campaign (Email, Influencer, etc.)   |
+| Channel Used        | Platform used for delivery                   |
+| Customer Segment    | Targeted audience segment                    |
+| Duration            | Number of days campaign lasted               |
+| Clicks              | Total user clicks                            |
+| Impressions         | Total ad views                               |
+| Acquisition Cost    | Cost to acquire customers                    |
+| Conversion Rate     | Proportion of conversions                    |
+| ROI                 | Return on investment                         |
+| Engagement Score    | Internal metric for interaction              |
+| Date                | Campaign launch date                         |
 
 ---
+
+## 🔧 Data Cleaning Summary
+
+- Converted `Date` column to datetime format  
+- Ensured numeric types for all quantitative columns  
+- Filled missing `Engagement Score` with column mean  
+- Labeled missing `Customer Segment` as `"Unknown"`  
+- Removed duplicates and verified unique `Campaign ID`s  
+- Created new features such as `CTR` and `CPC`
+
+---
+
+## 📈 EDA Highlights
+
+### ✅ Univariate Analysis
+- Most campaigns ran between **7–15 days**
+- Impressions and Clicks were **right-skewed**
+- Email and Social Media were the most used campaign types
+
+### ✅ Bivariate Analysis
+- **Clicks vs Impressions**: Strong positive correlation
+- **CPC vs ROI**: Inverse relationship (higher CPC → lower ROI)
+- **Engagement vs Conversion Rate**: Positive correlation
+
+---
+
+## 🔍 Correlation Analysis
+
+```python
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+corr = df[['Clicks', 'Impressions', 'CPC', 'ROI', 'Conversion rate', 'Engagement score']].corr()
+sns.heatmap(corr, annot=True, cmap='coolwarm')
+plt.title('Correlation Heatmap')
+plt.show()
 
 ## 📈 Power BI Dashboard Structure
 
