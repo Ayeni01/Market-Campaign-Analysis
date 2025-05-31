@@ -87,6 +87,10 @@ sns.heatmap(corr, annot=True, cmap='coolwarm')
 plt.title('Correlation Heatmap')
 plt.show()
 
+---
+
+---
+
 ## 📈 Power BI Dashboard Structure
 
 ### Page 1: Executive Overview
@@ -111,6 +115,7 @@ plt.show()
 - ROI by Customer Segment
 - Monthly KPI Comparison Table
 
+
 ---
 
 ## 📌 Key Insights
@@ -121,7 +126,9 @@ plt.show()
 - **Q1 campaigns** outperformed all other timeframes in ROI and Engagement.
 - High clicks didn’t always lead to conversions, indicating drop-off post-click.
 
+
 ---
+
 
 ## ✅ Recommendations
 
