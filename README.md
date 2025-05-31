@@ -2,7 +2,7 @@
 
 This project presents a full-scale analysis of marketing campaign data to uncover insights into performance across channels, customer segments, and time. The dataset includes metrics such as clicks, impressions, ROI, CPC, and conversion rates from multiple companies and campaign types.
 
-The analysis was conducted as the final project of a 60-day, 6-project data analytics challenge and demonstrates practical skills in data wrangling, exploratory data analysis, KPI engineering, and interactive dashboard creation using Power BI.
+This analysis demonstrates practical skills in data wrangling, exploratory data analysis, KPI engineering, and interactive dashboard creation using Power BI.
 
 ---
 
@@ -87,7 +87,6 @@ sns.heatmap(corr, annot=True, cmap='coolwarm')
 plt.title('Correlation Heatmap')
 plt.show()
 
----
 
 ---
 
@@ -117,6 +116,7 @@ plt.show()
 
 
 ---
+
 
 ## 📌 Key Insights
 
