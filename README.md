@@ -82,11 +82,10 @@ The dataset includes campaign-level records with the following attributes:
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-corr = df[['Clicks', 'Impressions', 'CPC', 'ROI', 'Conversion rate', 'Engagement score']].corr()
+[corr = df[['Clicks', 'Impressions', 'CPC', 'ROI', 'Conversion rate', 'Engagement score']].corr()
 sns.heatmap(corr, annot=True, cmap='coolwarm')
 plt.title('Correlation Heatmap')
-plt.show()
-
+plt.show()]
 
 ---
 
